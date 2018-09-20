@@ -15,7 +15,7 @@ import { CelebritiesDetailsComponent } from './components/celebrities/celebritie
 @NgModule({
   declarations: [
     AppComponent,
-    CelebritiesListComponent,
+   CelebritiesListComponent,
     HeaderComponent,
     CelebritiesFormComponent,
     CelebritiesDetailsComponent

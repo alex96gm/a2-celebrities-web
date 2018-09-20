@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./celebrities-list.component.css']
 })
 export class CelebritiesListComponent implements OnInit {
-  celebrities$: Observable<Celebrity[]>;
+  celebrities$: Celebrity[];
 
   constructor(
     private celebritiesService: CelebritiesService,
@@ -27,7 +27,10 @@ export class CelebritiesListComponent implements OnInit {
   onClickEdit(celebrity: Celebrity) {
   }
 
-  private getCelebrities() {
+  private getCelebrities(): void {
+    this.celebritiesService.getCelebrities().subscribe((celebrities:Celebrity[])=>{
+      console.log(celebrities);
+      this.celebrities$ = celebrities;
+    });
   }
-
 }
